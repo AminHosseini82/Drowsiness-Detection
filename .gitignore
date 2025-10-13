@@ -1,0 +1,34 @@
+# محیط مجازی (Virtual Environment)
+.venv/
+venv/
+env/
+
+# فایل‌های دیتا
+shape_predictor_68_face_landmarks.dat
+
+# پایتون (Python)
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# توزیع و پکیجینگ
+dist/
+build/
+*.egg-info/
+
+# لاگ‌ها و دیتابیس‌ها
+*.log
+*.sqlite3
+*.db
+
+# فایل‌های سیستم عامل
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# فایل‌های پیکربندی IDE (در صورت استفاده)
+# Visual Studio Code
+.vscode/
+
+# PyCharm
+.idea/
