@@ -56,8 +56,8 @@ while True:
         EAR = (left_ear + right_ear) / 2
         EAR = round(EAR, 2)
         if EAR < 0.26:
-            cv2.putText(frame, "Drowsy", (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 2)
-            cv2.putText(frame, "Are you sleepy?", (20, 400), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 2)
+            cv2.putText(frame, "Drowsy", (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 2)
+            cv2.putText(frame, "Are you sleepy?", (20, 400), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 2)
             print("Drowsy")
         print(EAR)
 
