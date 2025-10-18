@@ -36,7 +36,7 @@ while True:
                 next_point = 36
             x2 = face_landmarks.part(next_point).x
             y2 = face_landmarks.part(next_point).y
-            cv2.line(frame, (x, y), (x2, y2), (0, 255, 0), 1)
+            cv2.line(frame, (x, y), (x2, y2), (255, 0, 0), 1)
 
         # drawing second eye
         for n in range(42, 48):
@@ -48,7 +48,7 @@ while True:
                 next_point = 42
             x2 = face_landmarks.part(next_point).x
             y2 = face_landmarks.part(next_point).y
-            cv2.line(frame, (x, y), (x2, y2), (0, 255, 0), 1)
+            cv2.line(frame, (x, y), (x2, y2), (255, 0, 0), 1)
 
         left_ear = calculate_EAR(leftEye)
         right_ear = calculate_EAR(rightEye)
