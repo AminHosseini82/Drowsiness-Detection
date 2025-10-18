@@ -4,6 +4,8 @@ from scipy.spatial import distance
 
 
 def calculate_EAR(eye):
+    # A, B are Vertical distances
+    # c is Horizontal distance
     A = distance.euclidean(eye[1], eye[5])
     B = distance.euclidean(eye[2], eye[4])
     C = distance.euclidean(eye[0], eye[3])
@@ -13,20 +15,24 @@ def calculate_EAR(eye):
 
 
 cap = cv2.VideoCapture(0)
+# face detections
 hog_face_detector = dlib.get_frontal_face_detector()
+# find 68 point in face
 dlib_facelandmark = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 while True:
     _, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+    # find faces locations in camera save it in a list
     faces = hog_face_detector(gray)
     for face in faces:
 
         face_landmarks = dlib_facelandmark(gray, face)
         leftEye = []
         rightEye = []
-        # drawing second eye
+
+        # drawing first eye
         for n in range(36, 42):
             x = face_landmarks.part(n).x
             y = face_landmarks.part(n).y
