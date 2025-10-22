@@ -10,8 +10,8 @@ EYE_AR_PRE_THRESH = 0.30
 CONSEC_FRAMES_HIGH = 60     
 CONSEC_FRAMES_LOW = 200     
 # 👈 مطمئن شوید مسیر و نام فایل‌های WAV درست هستند
-ALARM_HIGH_SOUND = "F:\Amin_Projects\Learning\Drowsiness-Detection_3\alarms\alarm_high.wav"  
-ALARM_LOW_SOUND = "F:\Amin_Projects\Learning\Drowsiness-Detection_3\alarms\alarm_low.wav"
+ALARM_HIGH_SOUND = r"F:\Amin_Projects\Learning\Drowsiness-Detection_3\alarms\alarm_high.wav"  
+ALARM_LOW_SOUND = r"F:\Amin_Projects\Learning\Drowsiness-Detection_3\alarms\alarm_low.wav"
 
 # --- شمارنده‌ها (Counters) ---
 DROWSY_COUNTER = 0          
