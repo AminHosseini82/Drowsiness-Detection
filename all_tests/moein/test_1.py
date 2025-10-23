@@ -9,8 +9,8 @@ EYE_AR_THRESH = 0.26
 CONSEC_FRAMES_HIGH = 60     
 CONSEC_FRAMES_LOW = 200     
 # 👈 مطمئن شوید مسیر و نام فایل‌های WAV درست هستند
-ALARM_HIGH_SOUND = r"F:\Amin_Projects\Learning\Drowsiness-Detection_3\alarms\alarm_high.wav"  
-ALARM_LOW_SOUND = r"F:\Amin_Projects\Learning\Drowsiness-Detection_3\alarms\alarm_low.wav"
+ALARM_HIGH_SOUND = r"F:\University\7th term\Computer vision\project\Drowsiness-Detection\alarms\alarm_high.wav"  
+ALARM_LOW_SOUND = r"F:\University\7th term\Computer vision\project\Drowsiness-Detection\alarms\alarm_low.wav"
 
 # --- شمارنده‌ها (Counters) ---
 DROWSY_COUNTER = 0          
@@ -27,17 +27,13 @@ wave_low = None
 # -------------------------------------------------------------------------
 # 🌟 تابع جدید: اجرای simpleaudio در یک نَخ جداگانه
 def play_alarm_thread(wave_obj):
-    """
-    پخش فایل صوتی با استفاده از simpleaudio.
-    """
-    if wave_obj is not None:
-        try:
-            # play_obj = wave_obj.play() # 👈 اگر بخواهید آلارم تا انتها پخش شود
-            wave_obj.play()
-        except Exception as e:
-            # این خطا معمولاً در صورت مشکل در زیرسیستم صوتی رخ می‌دهد
-            print(f"Error playing sound via simpleaudio: {e}")
-            
+    try:
+        if wave_obj is not None:
+            play_obj = wave_obj.play()
+            # play_obj.wait_done()  # مطمئن شو این خط حذف شده
+    except Exception as e:
+        print("⚠️ Sound thread crashed:")
+        traceback.print_exc()
 # -------------------------------------------------------------------------
 # ... (تابع calculate_EAR بدون تغییر)
 def calculate_EAR(eye):
